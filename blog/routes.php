@@ -3,7 +3,7 @@
 $router = new Router();
 
 $router->define([
-    '' => 'app/Controllers/GuestbookController.php',
-    'list' => 'app/Controllers/GuestbookController.php',
-    'add' => 'app/Controllers/GuestbookCreateController.php'
+    '' => 'GuestbookController.php',
+    'list' => 'GuestbookController.php',
+    'add' => 'GuestbookCreateController.php'
 ]);

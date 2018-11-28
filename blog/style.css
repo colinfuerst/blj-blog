@@ -9,11 +9,11 @@ body {
 	
 }
 
-.guestbook-entry {
+.blog-entry {
 margin-bottom: 20px;
 border-bottom: 1px solid black;	
 }
-.guestbook-entry {
+.blog-entry {
 	hyphens: none;
 	hyphens: manual;
 	hyphens: auto;

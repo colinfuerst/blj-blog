@@ -12,4 +12,4 @@ $statement->execute();
 
 $entries = $statement->fetchAll();
 
-require 'app/Views/guestbook.view.php';
+require 'blog.view.php';
