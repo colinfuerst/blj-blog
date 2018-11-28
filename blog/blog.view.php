@@ -7,8 +7,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Antic+Slab|Monoton|Rokkitt" rel="stylesheet">
 </head>
 <body>
-
-	
 <div calss="blog">
 		<h1 class="title">Colin's Blog</h1>
 	<form action="add" method="POST">
@@ -27,9 +25,6 @@
 			<label for="message" class="title" >Link zu einem Bild:</label>
 			<textarea type="text" id="link" name="link"></textarea>
 		</div>
-
-
-
 <input type="submit" value="Absenden">
 <a href="blj-blogs.php">Zu den anderen Blogs</a>
 
@@ -40,24 +35,14 @@
     <div class="blog-entry">
 		<?php 
 		$entry = preg_replace("/(.{80})/mi","$1\n", $entry);
-		
-	
-
-		 
 		?>
         <h3><?= htmlspecialchars($entry['name'] , ENT_QUOTES, 'UTF-8'); ?></h3>
         <div><?= htmlspecialchars($entry['message'], ENT_QUOTES, 'UTF-8'); ?></div><br><br>
-				<div><?= htmlspecialchars($entry['date'], ENT_QUOTES, 'UTF-8'); ?></div><br>
-				<?php if( htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8") !== ''){
+				<?php if(htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8") !== ''){
         ?><img class= "images" src= <?=htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8");?> alt="Bild">
-    
-
-				<?php } ?>	
-</div>
-
-	
-	
-	
+				<?php } ?>
+				<div class="date"><?= htmlspecialchars($entry['date'], ENT_QUOTES, 'UTF-8'); ?></div>
+				</div><?php } ?>
 	</div>
 	</form>
 
