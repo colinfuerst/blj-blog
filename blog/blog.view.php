@@ -11,7 +11,7 @@
 		<p class="titel">Colin's Blog</p>
 	<form action="add" method="POST">
 
-		<h4 class="title">Neuen Eintrag erstellen</h4>
+		<p class="ueberbegriff">Neuen Eintrag erstellen</p>
 		
 		<div class="form-field">
 			<label for="name" class="title" >Name:</label>
