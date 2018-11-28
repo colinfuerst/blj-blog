@@ -89,4 +89,18 @@ h2
 }
 .date{
 	margin-top: 50px;
+	font-weight: bold;
 }
+.titel{
+font-size: 35px;
+font-family: 'Rokkitt', serif;
+	font-family: 'Monoton', cursive;
+	font-family: 'Antic Slab', serif;
+}
+.eintreage{
+	font-size: 25px;
+	font-family: 'Rokkitt', serif;
+		font-family: 'Monoton', cursive;
+		font-family: 'Antic Slab', serif;
+	}
+	

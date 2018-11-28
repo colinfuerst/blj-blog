@@ -8,7 +8,7 @@
 </head>
 <body>
 <div calss="blog">
-		<h1 class="title">Colin's Blog</h1>
+		<p class="titel">Colin's Blog</p>
 	<form action="add" method="POST">
 
 		<h4 class="title">Neuen Eintrag erstellen</h4>
@@ -28,7 +28,7 @@
 <input type="submit" value="Absenden">
 <a href="blj-blogs.php">Zu den anderen Blogs</a>
 
-<h2 class="eintreage">Blog-Einträge:</h2>
+<p class="titel">Blog-Einträge:</p>
 
 <div class="blog-list">
 	<?php foreach ($entries as $entry) {?>
@@ -36,7 +36,7 @@
 		<?php 
 		$entry = preg_replace("/(.{80})/mi","$1\n", $entry);
 		?>
-        <h3><?= htmlspecialchars($entry['name'] , ENT_QUOTES, 'UTF-8'); ?></h3>
+        <p class="eintreage"><?= htmlspecialchars($entry['name'] , ENT_QUOTES, 'UTF-8'); ?></p>
         <div><?= htmlspecialchars($entry['message'], ENT_QUOTES, 'UTF-8'); ?></div><br><br>
 				<?php if(htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8") !== ''){
         ?><img class= "images" src= <?=htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8");?> alt="Bild">
