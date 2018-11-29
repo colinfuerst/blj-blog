@@ -51,13 +51,34 @@
 				<?php if(htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8") !== ''){
         ?><img class= "images" src= <?=htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8");?> alt="Bild"><?php } ?>
 				<p class="eintrag">Rating:</p>
-				<?php echo"$upvotes"?><button type="button" value="Submit"><img class="button-image" src="images/daumen-hoch.jpg" alt="Upvote">
-				<button type="button" value="Submit"><img class="button-image2" src="images/daumen-runter.png" alt="Downvote"></button>
+				<button type="button" name="like" value="Submit"><img class="button-image" src="images/daumen-hoch.jpg" alt="Upvote">
+				<?php
+					$like=0;
+					if(isset($_POST['like']))
+						{
+							$like = $like + 1;
+						}
+
+				
+					echo $like;
+					?>
+				<button type="button" name="dislike" value="Submit"><img class="button-image2" src="images/daumen-runter.png" alt="Downvote">
+				<?php
+					for($dislike=0; $dislike == 10;$dislike = $dislike + 0){
+						if(isset($_POST['dislike']))
+						{
+							$dislike = $dislike + 1;
+						}
+				}
+				echo $dislike;
+					?></button>
+			<div class="button">
+          <button onclick="window.location.href='kommentar.php'">Kommentar abgeben</button>
+			</div>
 				<div class="date"><?= htmlspecialchars($entry['date'], ENT_QUOTES, 'UTF-8'); ?></div>
 				</div><?php } ?>
 	</div>
-	<?php
-	$upvotes = 1;
-	?>
+
+
 </body>
 </html>
