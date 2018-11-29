@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="center">
     <div class="wrapper">
 
         <h1 class="form-title">Colin's Blog</h1>
@@ -14,7 +14,7 @@
 <?php
     $user = 'guest';
     $pass = 'blj12345';
-    $dbh = new PDO('mysql:host=10.20.16.101;dbname=blogdb', $user, $pass);
+    $dbh = new PDO('mysql:host=10.20.16.102;dbname=blogdb', $user, $pass);
     
     $stmt = $dbh->prepare('SELECT * FROM andereblogs');
     $stmt->execute();
