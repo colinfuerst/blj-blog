@@ -45,7 +45,7 @@
 		<?php 
 		$entry = preg_replace("/(.{80})/mi","$1\n", $entry);
 		?>
-				<p class="eintreage"><?= htmlspecialchars($entry['name'] , ENT_QUOTES, 'UTF-8'); ?></p>
+				<p class="eintreage"><?= htmlspecialchars($entry['name'] , ENT_QUOTES, 'UTF-8'); ?>
 				<p class="eintrag"><?= htmlspecialchars($entry['titel'] , ENT_QUOTES, 'UTF-8'); ?></p>
         <div><?= htmlspecialchars($entry['message'], ENT_QUOTES, 'UTF-8'); ?></div><br><br>
 				<?php if(htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8") !== ''){
@@ -53,10 +53,10 @@
 				<p class="eintrag">Rating:</p>
 				<button type="button" name="like" value="Submit"><img class="button-image" src="images/daumen-hoch.jpg" alt="Upvote">
 				<?php
-					$like=0;
+					$like=12;
 					if(isset($_POST['like']))
 						{
-							$like = $like + 1;
+							$like = $like + 123;
 						}
 
 				
@@ -64,10 +64,11 @@
 					?>
 				<button type="button" name="dislike" value="Submit"><img class="button-image2" src="images/daumen-runter.png" alt="Downvote">
 				<?php
+					$dislike=12;
 					for($dislike=0; $dislike == 10;$dislike = $dislike + 0){
 						if(isset($_POST['dislike']))
 						{
-							$dislike = $dislike + 1;
+							$dislike = $dislike + 0;
 						}
 				}
 				echo $dislike;
