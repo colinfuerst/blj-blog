@@ -9,7 +9,7 @@
 <body id="center">
     <div class="wrapper">
 
-        <h1 class="form-title">Colin's Blog</h1>
+        <h1 class="form-title">Andere Blogs</h1>
         <p>Liste der Blogs meiner Kollegen:</p>
 <?php
     $user = 'guest';

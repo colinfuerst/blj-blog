@@ -7,6 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="center">
-<p> akjdfkljasdf</p>
+
 </body>
 </html>

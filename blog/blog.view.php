@@ -35,51 +35,53 @@
 
 		<div class="form-actions">
         <input class="btn btn-primary" type="submit" value="Absenden">
+				</form>
         <a href="blj-blogs.php" class="btn">Zu den anderen Blogs</a>
 
 <p class="titel">Blog-Einträge:</p>
 
 <div class="blog-list">
-	<?php foreach ($entries as $entry) {?>
-    <div class="blog-entry">
+		<?php foreach ($entries as $entry):?>
+  <div class="blog-entry">
 		<?php 
-		$entry = preg_replace("/(.{80})/mi","$1\n", $entry);
+			$entry = preg_replace("/(.{80})/mi","$1\n", $entry);
 		?>
-				<p class="eintreage"><?= htmlspecialchars($entry['name'] , ENT_QUOTES, 'UTF-8'); ?>
+				<p class="eintreage"><?= htmlspecialchars($entry['name'] , ENT_QUOTES, 'UTF-8'); ?></p>
+
 				<p class="eintrag"><?= htmlspecialchars($entry['titel'] , ENT_QUOTES, 'UTF-8'); ?></p>
-        <div><?= htmlspecialchars($entry['message'], ENT_QUOTES, 'UTF-8'); ?></div><br><br>
-				<?php if(htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8") !== ''){
-        ?><img class= "images" src= <?=htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8");?> alt="Bild"><?php } ?>
-				<p class="eintrag">Rating:</p>
-				<button type="button" name="like" value="Submit"><img class="button-image" src="images/daumen-hoch.jpg" alt="Upvote">
-				<?php
-					$like=12;
-					if(isset($_POST['like']))
-						{
-							$like = $like + 123;
-						}
 
+        <div>
+				<?= htmlspecialchars($entry['message'], ENT_QUOTES, 'UTF-8'); ?>
+				</div>
+				<br>
+				<br>
+
+				<?php if(htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8") !== ''):?>
+
+				<img class= "images" src= <?=htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8");?> alt="Bild zu gross!">
 				
-					echo $like;
-					?>
-				<button type="button" name="dislike" value="Submit"><img class="button-image2" src="images/daumen-runter.png" alt="Downvote">
-				<?php
-					$dislike=12;
-					for($dislike=0; $dislike == 10;$dislike = $dislike + 0){
-						if(isset($_POST['dislike']))
-						{
-							$dislike = $dislike + 0;
-						}
-				}
-				echo $dislike;
-					?></button>
+				<?php endif; ?>
+				
+				<p class="eintrag">Rating:</p>
+
+				<button type="button" name="like" value="like"><img class="button-image" src="images/daumen-hoch.jpg" alt="Upvote">
+				
+				<button type="button" name="dislike" value="dislike"><img class="button-image2" src="images/daumen-runter.png" alt="Downvote"></button>
+			
+			
 			<div class="button">
-          <button onclick="window.location.href='kommentar.php'">Kommentar abgeben</button>
+				<form action="kommentar.php" method="post">
+        	<button>Kommentar abgeben</button>
+					<input type="hidden" name="kommentar-id" value="<?= $entry["id"] ?> "/>
+				</form>
 			</div>
+		
+
 				<div class="date"><?= htmlspecialchars($entry['date'], ENT_QUOTES, 'UTF-8'); ?></div>
-				</div><?php } ?>
-	</div>
+				</div><?php endforeach; ?>
 
+</div>
 
+	
 </body>
 </html>
